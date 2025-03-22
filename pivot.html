@@ -14,28 +14,39 @@
 
     <div class="container">
         <h2>Hitung Pivot Point</h2>
-        <label for="open">Open:</label>
-        <input type="number" id="open" placeholder="Masukkan nilai Open">
+        
+        <div class="input-group">
+            <label for="open">Open:</label>
+            <input type="number" id="open" placeholder="Masukkan nilai Open">
+        </div>
 
-        <label for="high">High:</label>
-        <input type="number" id="high" placeholder="Masukkan nilai High">
+        <div class="input-group">
+            <label for="high">High:</label>
+            <input type="number" id="high" placeholder="Masukkan nilai High">
+        </div>
 
-        <label for="low">Low:</label>
-        <input type="number" id="low" placeholder="Masukkan nilai Low">
+        <div class="input-group">
+            <label for="low">Low:</label>
+            <input type="number" id="low" placeholder="Masukkan nilai Low">
+        </div>
 
-        <label for="close">Close:</label>
-        <input type="number" id="close" placeholder="Masukkan nilai Close">
+        <div class="input-group">
+            <label for="close">Close:</label>
+            <input type="number" id="close" placeholder="Masukkan nilai Close">
+        </div>
 
         <button id="calculate">Hitung Pivot</button>
 
-        <h3>Hasil:</h3>
-        <p><strong>Pivot Point:</strong> <span id="pivot"></span></p>
-        <p><strong>Resistance 1:</strong> <span id="r1"></span></p>
-        <p><strong>Resistance 2:</strong> <span id="r2"></span></p>
-        <p><strong>Resistance 3:</strong> <span id="r3"></span></p>
-        <p><strong>Support 1:</strong> <span id="s1"></span></p>
-        <p><strong>Support 2:</strong> <span id="s2"></span></p>
-        <p><strong>Support 3:</strong> <span id="s3"></span></p>
+        <div class="result-box">
+            <h3>Hasil Perhitungan</h3>
+            <p><strong>Pivot Point:</strong> <span id="pivot">-</span></p>
+            <p><strong>Resistance 1:</strong> <span id="r1">-</span></p>
+            <p><strong>Resistance 2:</strong> <span id="r2">-</span></p>
+            <p><strong>Resistance 3:</strong> <span id="r3">-</span></p>
+            <p><strong>Support 1:</strong> <span id="s1">-</span></p>
+            <p><strong>Support 2:</strong> <span id="s2">-</span></p>
+            <p><strong>Support 3:</strong> <span id="s3">-</span></p>
+        </div>
     </div>
 </body>
 </html>
