@@ -1,48 +1,104 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const menuToggle = document.getElementById("menu-toggle");
-    const dropdownMenu = document.getElementById("dropdown-menu");
-    const newsContainer = document.getElementById("news-container");
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
-    // Toggle menu dropdown
-    menuToggle.addEventListener("click", function() {
-        dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
-    });
+header {
+    background-color: #1e1e1e;
+    padding: 20px;
+    text-align: center;
+}
 
-    document.addEventListener("click", function(event) {
-        if (!menuToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
-            dropdownMenu.style.display = "none";
-        }
-    });
+.glowing-text {
+    color: cyan;
+    text-shadow: 0 0 5px cyan, 0 0 10px cyan;
+}
 
-    // Fetch berita dari Investing.com
-    fetch("https://api.allorigins.win/get?url=https://www.investing.com/rss/news_25.rss")
-    .then(response => response.json())
-    .then(data => {
-        let parser = new DOMParser();
-        let xml = parser.parseFromString(data.contents, "application/xml");
-        let items = xml.querySelectorAll("item");
+.menu-container {
+    background-color: #222;
+    padding: 10px;
+    text-align: left;
+    border-top: 2px solid cyan;
+    border-bottom: 2px solid cyan;
+    position: relative;
+}
 
-        let newsHTML = "";
-        items.forEach((item, index) => {
-            if (index < 5) { // Menampilkan 5 berita terbaru
-                let title = item.querySelector("title").textContent;
-                let link = item.querySelector("link").textContent;
-                let description = item.querySelector("description").textContent;
+#menu-toggle {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid cyan;
+    background: transparent;
+    color: cyan;
+    cursor: pointer;
+}
 
-                newsHTML += `
-                    <div class="news-item">
-                        <h3><a href="${link}" target="_blank">${title}</a></h3>
-                        <p>${description}</p>
-                    </div>
-                    <hr>
-                `;
-            }
-        });
+#dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    background: #1e1e1e;
+    border: 2px solid cyan;
+    padding: 10px;
+    border-radius: 5px;
+    width: 200px;
+}
 
-        newsContainer.innerHTML = newsHTML;
-    })
-    .catch(error => {
-        newsContainer.innerHTML = "<p>Gagal memuat berita.</p>";
-        console.error("Error fetching news:", error);
-    });
-});
+#dropdown-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#dropdown-menu ul li {
+    padding: 10px;
+    border-bottom: 1px solid cyan;
+}
+
+#dropdown-menu ul li:last-child {
+    border-bottom: none;
+}
+
+#dropdown-menu ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+#dropdown-menu ul li a:hover {
+    background: cyan;
+    color: black;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+#news-container {
+    margin-top: 20px;
+}
+
+.news-item h3 a {
+    color: cyan;
+    text-decoration: none;
+}
+
+.news-item h3 a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #1e1e1e;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
