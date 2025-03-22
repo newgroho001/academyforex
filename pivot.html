@@ -5,31 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pivot Calculator</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <script src="pivot.js" defer></script>
 </head>
 <body>
     <header>
-        <h1 class="glowing-text">ACADEMY FOREX24</h1>
+        <h1 class="glowing-text">Pivot Calculator</h1>
     </header>
 
-    <div class="menu-container">
-        <button id="menu-toggle">MENU</button>
-        <div id="dropdown-menu">
-            <ul>
-                <li><a href="index.html">Beranda</a></li>
-                <li><a href="berita.html">Berita</a></li>
-                <li><a href="analisa.html">Analisa</a></li>
-                <li><a href="pivot.html">Pivot Calculator</a></li>
-                <li><a href="historical_data.html">Historical Data</a></li>
-            </ul>
-        </div>
+    <div class="container">
+        <h2>Hitung Pivot Point</h2>
+        <label for="open">Open:</label>
+        <input type="number" id="open" placeholder="Masukkan nilai Open">
+
+        <label for="high">High:</label>
+        <input type="number" id="high" placeholder="Masukkan nilai High">
+
+        <label for="low">Low:</label>
+        <input type="number" id="low" placeholder="Masukkan nilai Low">
+
+        <label for="close">Close:</label>
+        <input type="number" id="close" placeholder="Masukkan nilai Close">
+
+        <button id="calculate">Hitung Pivot</button>
+
+        <h3>Hasil:</h3>
+        <p><strong>Pivot Point:</strong> <span id="pivot"></span></p>
+        <p><strong>Resistance 1:</strong> <span id="r1"></span></p>
+        <p><strong>Resistance 2:</strong> <span id="r2"></span></p>
+        <p><strong>Resistance 3:</strong> <span id="r3"></span></p>
+        <p><strong>Support 1:</strong> <span id="s1"></span></p>
+        <p><strong>Support 2:</strong> <span id="s2"></span></p>
+        <p><strong>Support 3:</strong> <span id="s3"></span></p>
     </div>
-
-    <main>
-        <h2>Pivot Calculator</h2>
-        <p>Gunakan alat ini untuk menghitung pivot trading Anda.</p>
-    </main>
-
-     <!-- Footer akan dimuat di sini -->
 </body>
 </html>
